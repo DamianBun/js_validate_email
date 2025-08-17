@@ -60,4 +60,14 @@ describe(`Function 'validateEmail':`, () => {
     expect(validateEmail('test--838@gmailpost.com.'))
       .toBeTruthy();
   });
+
+  it(`should return 'true' for the email with minimal length`, () => {
+    expect(validateEmail('t@q.c'))
+      .toBeTruthy();
+  });
+
+  it(`should return 'false' for the email with no domain`, () => {
+    expect(validateEmail('false@email'))
+      .toBeFalsy();
+  });
 });
